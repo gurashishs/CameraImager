@@ -21,14 +21,14 @@
 
            <div class="page">
             <div class="row">
-                <div class="page_title col">Camera Viewer</div>
+                <div class="page_title col">Camera Imager</div>
                  <div class="page_title col" id="status" style="display:none">No Cameras installed, add some using Add Devices</div> 
             </div>
             <div class="row">
                 <div id="cameraGoodness" class="app_block col">
-                   
-                    <img id="camera1Image" class="app_image flip-h" />
-                    <img id="camera2Image" class="app_image flip-h" />
+
+                    <div id="livePreview">Live Preview <br> <img id="camera1Image" class="app_image flip-h" /></div>
+                    <div id="savedPicture">Save Picture <br> <img id="camera2Image" class="app_image flip-h" /></div>
                     
                     <div class="app_control">
                         <img id="recordBTN" class="app_button3" src="Assets/MetroRecord.png" onclick="CaptureImage()" />
