@@ -45,7 +45,6 @@ namespace HomeOS.Hub.Apps.SmartCam
                 byte[] image = smartCam.GetImage(cameraFriendlyName);
                 MemoryStream ms = new MemoryStream(image);
                 Image i = Image.FromStream(ms);
-                ms.Close();
                 i.Save(filepath, System.Drawing.Imaging.ImageFormat.Jpeg);
                 return Convert.ToBase64String(image, 0, image.Length, Base64FormattingOptions.InsertLineBreaks);
             }
