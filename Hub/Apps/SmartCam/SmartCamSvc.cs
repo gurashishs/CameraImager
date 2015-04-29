@@ -38,14 +38,14 @@ namespace HomeOS.Hub.Apps.SmartCam
             }
         }
 
-        public string SaveWebImage(string cameraFriendlyName)
+        public string SaveWebImage(string cameraFriendlyName, string filepath)
         {
             try
             {
                 byte[] image = smartCam.GetImage(cameraFriendlyName);
                 MemoryStream ms = new MemoryStream(image);
                 Image i = Image.FromStream(ms);
-                i.Save("c:\\theimage.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                i.Save(filepath, System.Drawing.Imaging.ImageFormat.Jpeg);
                 return Convert.ToBase64String(image, 0, image.Length, Base64FormattingOptions.InsertLineBreaks);
             }
             catch (Exception e)
@@ -307,7 +307,7 @@ namespace HomeOS.Hub.Apps.SmartCam
 
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.WrappedRequest, ResponseFormat = WebMessageFormat.Json)]
-        string SaveWebImage(string cameraFriendlyName);
+        string SaveWebImage(string cameraFriendlyName, string filepath);
 
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.WrappedRequest, ResponseFormat = WebMessageFormat.Json)]

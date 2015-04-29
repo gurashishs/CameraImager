@@ -6,7 +6,7 @@ var g_isRecording = false;
 var g_keepalive;
 var g_currentCamera = "";
 var g_maxClipsToDisplay = 5;
-
+var g_filepath = "c:\\\\theimage.jpg"
 
 var CAMERA_INFORMATION_ARRAY = null;
 
@@ -132,8 +132,11 @@ function CaptureImage() {
     if (null == g_smartCamGetImageServiceHelper) {
         g_smartCamGetImageServiceHelper = new PlatformServiceHelper();
     }
-
-    g_smartCamGetImageServiceHelper.MakeServiceCall("webapp/SaveWebImage", '{"cameraFriendlyName": "' + g_currentCamera + '"}', GetWebSingleImageCallback);
+             
+    g_smartCamGetImageServiceHelper.MakeServiceCall("webapp/SaveWebImage",
+                                                    '{"cameraFriendlyName": "' + g_currentCamera +
+                                                    '","filepath": "' +g_filepath +
+                                                    '"}', GetWebSingleImageCallback);
 }
 
 function RecordToggle() {
