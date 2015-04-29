@@ -125,7 +125,8 @@ function GetWebImageCallback(context, result) {
 }
 
 function GetWebSingleImageCallback(context, result) {
-    $('#camera1Image').attr('src', "data:image/jpg;base64," + result);
+    $('#camera2Image').attr('src', "data:image/jpg;base64," + result);
+    GetImage();
 }
 
 function CaptureImage() {
