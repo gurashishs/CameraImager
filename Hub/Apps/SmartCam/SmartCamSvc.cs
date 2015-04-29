@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using HomeOS.Hub.Platform.Views;
+using System.IO;
+using System.Drawing;
 
 namespace HomeOS.Hub.Apps.SmartCam
 {
@@ -32,6 +34,23 @@ namespace HomeOS.Hub.Apps.SmartCam
             catch (Exception e)
             {
                 logger.Log("Got exception in GetWebImage: " + e);
+                return String.Empty;
+            }
+        }
+
+        public string SaveWebImage(string cameraFriendlyName)
+        {
+            try
+            {
+                byte[] image = smartCam.GetImage(cameraFriendlyName);
+                MemoryStream ms = new MemoryStream(image);
+                Image i = Image.FromStream(ms);
+                i.Save("c:\\theimage.jpg", System.Drawing.Imaging.ImageFormat.Jpeg);
+                return Convert.ToBase64String(image, 0, image.Length, Base64FormattingOptions.InsertLineBreaks);
+            }
+            catch (Exception e)
+            {
+                logger.Log("Got exception in SaveWebImage: " + e);
                 return String.Empty;
             }
         }
@@ -285,6 +304,10 @@ namespace HomeOS.Hub.Apps.SmartCam
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.WrappedRequest, ResponseFormat = WebMessageFormat.Json)]
         string GetWebImage(string cameraFriendlyName);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.WrappedRequest, ResponseFormat = WebMessageFormat.Json)]
+        string SaveWebImage(string cameraFriendlyName);
 
         [OperationContract]
         [WebInvoke(Method = "POST", BodyStyle = WebMessageBodyStyle.WrappedRequest, ResponseFormat = WebMessageFormat.Json)]

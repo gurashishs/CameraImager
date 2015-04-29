@@ -124,6 +124,17 @@ function GetWebImageCallback(context, result) {
     GetImage();
 }
 
+function GetWebSingleImageCallback(context, result) {
+    $('#camera1Image').attr('src', "data:image/jpg;base64," + result);
+}
+
+function CaptureImage() {
+    if (null == g_smartCamGetImageServiceHelper) {
+        g_smartCamGetImageServiceHelper = new PlatformServiceHelper();
+    }
+
+    g_smartCamGetImageServiceHelper.MakeServiceCall("webapp/SaveWebImage", '{"cameraFriendlyName": "' + g_currentCamera + '"}', GetWebSingleImageCallback);
+}
 
 function RecordToggle() {
 
