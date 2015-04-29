@@ -205,6 +205,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadgeteer.MicrosoftResearch
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gadgeteer.MicrosoftResearch.RelaySwitch", "Drivers\Gadgeteer.MicrosoftResearch.RelaySwitch\Gadgeteer.MicrosoftResearch.RelaySwitch.csproj", "{B9C8A240-D13E-4408-A363-09E46C974F3F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CameraImager", "Apps\SmartCamImager\CameraImager.csproj", "{75C28979-FD12-4316-BCB4-F96D44E7F264}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		ClientDebug|Any CPU = ClientDebug|Any CPU
@@ -1037,6 +1039,27 @@ Global
 		{B9C8A240-D13E-4408-A363-09E46C974F3F}.Release|Win32.ActiveCfg = Release|Any CPU
 		{B9C8A240-D13E-4408-A363-09E46C974F3F}.Release|x64.ActiveCfg = Release|Any CPU
 		{B9C8A240-D13E-4408-A363-09E46C974F3F}.Release|x86.ActiveCfg = Release|Any CPU
+		{75C28979-FD12-4316-BCB4-F96D44E7F264}.ClientDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75C28979-FD12-4316-BCB4-F96D44E7F264}.ClientDebug|Any CPU.Build.0 = Debug|Any CPU
+		{75C28979-FD12-4316-BCB4-F96D44E7F264}.ClientDebug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{75C28979-FD12-4316-BCB4-F96D44E7F264}.ClientDebug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{75C28979-FD12-4316-BCB4-F96D44E7F264}.ClientDebug|Win32.ActiveCfg = Debug|Any CPU
+		{75C28979-FD12-4316-BCB4-F96D44E7F264}.ClientDebug|x64.ActiveCfg = Debug|Any CPU
+		{75C28979-FD12-4316-BCB4-F96D44E7F264}.ClientDebug|x86.ActiveCfg = Debug|Any CPU
+		{75C28979-FD12-4316-BCB4-F96D44E7F264}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75C28979-FD12-4316-BCB4-F96D44E7F264}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75C28979-FD12-4316-BCB4-F96D44E7F264}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{75C28979-FD12-4316-BCB4-F96D44E7F264}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{75C28979-FD12-4316-BCB4-F96D44E7F264}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{75C28979-FD12-4316-BCB4-F96D44E7F264}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{75C28979-FD12-4316-BCB4-F96D44E7F264}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{75C28979-FD12-4316-BCB4-F96D44E7F264}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75C28979-FD12-4316-BCB4-F96D44E7F264}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75C28979-FD12-4316-BCB4-F96D44E7F264}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{75C28979-FD12-4316-BCB4-F96D44E7F264}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{75C28979-FD12-4316-BCB4-F96D44E7F264}.Release|Win32.ActiveCfg = Release|Any CPU
+		{75C28979-FD12-4316-BCB4-F96D44E7F264}.Release|x64.ActiveCfg = Release|Any CPU
+		{75C28979-FD12-4316-BCB4-F96D44E7F264}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -1091,5 +1114,6 @@ Global
 		{6868916B-E0A0-4F21-A34C-47CCB275F6EB} = {074F4C41-ED3D-410D-8967-411AD26EEDF2}
 		{79D7981F-9AAA-42A3-B0FA-6974CC504982} = {074F4C41-ED3D-410D-8967-411AD26EEDF2}
 		{B9C8A240-D13E-4408-A363-09E46C974F3F} = {074F4C41-ED3D-410D-8967-411AD26EEDF2}
+		{75C28979-FD12-4316-BCB4-F96D44E7F264} = {7EF50C0F-42A9-4737-8EF2-B9AC73FFACA4}
 	EndGlobalSection
 EndGlobal

@@ -1,5 +1,16 @@
 ﻿<Modules>
-
+  <Module
+AppName="CameraImager"
+BinaryName="HomeOS.Hub.Apps.CameraImager"
+Description="description"
+Rating="5"
+IconUrl="icon.png"
+Version="1.0.0.0">
+    <RoleList>
+      <Role
+      Name=":camera:"/>
+    </RoleList>
+  </Module>
 
   <Module AppName="AzureEventHubSample" BinaryName="HomeOS.Hub.Apps.AzureEventHubSample" Description="A sample app to demonstrate how to send sensor data to an Azure Event Hub" Rating="5" IconUrl="icon.png">
     <RoleList Optional="true">
