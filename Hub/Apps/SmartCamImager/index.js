@@ -6,7 +6,10 @@ var g_isRecording = false;
 var g_keepalive;
 var g_currentCamera = "";
 var g_maxClipsToDisplay = 5;
-var g_filepath = "c:\\\\theimage.jpg"
+
+var g_directory = "c:\\\\";
+var g_filenameString = "capturedImage";
+var g_filenameExtension = ".jpg";
 
 var CAMERA_INFORMATION_ARRAY = null;
 
@@ -134,10 +137,17 @@ function CaptureImage() {
         g_smartCamGetImageServiceHelper = new PlatformServiceHelper();
     }
 
+    g_directory = "c:\\\\";
+    g_filenameString = "capturedImage";
+    g_filenameExtension = ".jpg";
+    
+    filepath = g_directory + g_filenameString + (new Date().getTime()) + g_filenameExtension;
+
     g_smartCamGetImageServiceHelper.MakeServiceCall("webapp/SaveWebImage",
                                                     '{"cameraFriendlyName": "' + g_currentCamera +
-                                                    '","filepath": "' + g_filepath +
+                                                    '","filepath": "' + filepath +
                                                     '"}', GetWebSingleImageCallback);
+    document.getElementById("capturedText").innerHTML = "Image Recorded to " + filepath;
 }
 
 function RecordToggle() {
