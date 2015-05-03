@@ -37,15 +37,23 @@ namespace HomeOS.Hub.Apps.CameraImager
                 return String.Empty;
             }
         }
-
+        
+        // Service to save image given the camera name and a filepath to save to
         public string SaveWebImage(string cameraFriendlyName, string filepath)
         {
             try
             {
+                // Get image
                 byte[] image = smartCam.GetImage(cameraFriendlyName);
+                
+                // Convert to Image object
                 MemoryStream ms = new MemoryStream(image);
                 Image i = Image.FromStream(ms);
+                
+                // Save image to given filepath
                 i.Save(filepath, System.Drawing.Imaging.ImageFormat.Jpeg);
+                
+                // Convert the image to string and return the string
                 return Convert.ToBase64String(image, 0, image.Length, Base64FormattingOptions.InsertLineBreaks);
             }
             catch (Exception e)

@@ -127,26 +127,27 @@ function GetWebImageCallback(context, result) {
     GetImage();
 }
 
+// Change the camera2image source to captured image
 function GetWebSingleImageCallback(context, result) {
     $('#camera2Image').attr('src', "data:image/jpg;base64," + result);
     GetImage();
 }
 
+// Ask the service to capture an image and save it the given filepath
 function CaptureImage() {
     if (null == g_smartCamGetImageServiceHelper) {
         g_smartCamGetImageServiceHelper = new PlatformServiceHelper();
     }
 
-    g_directory = "c:\\\\";
-    g_filenameString = "capturedImage";
-    g_filenameExtension = ".jpg";
-    
+    // Unique filepath for each image captured
     filepath = g_directory + g_filenameString + (new Date().getTime()) + g_filenameExtension;
 
+    // Call the service to capture image
     g_smartCamGetImageServiceHelper.MakeServiceCall("webapp/SaveWebImage",
                                                     '{"cameraFriendlyName": "' + g_currentCamera +
                                                     '","filepath": "' + filepath +
                                                     '"}', GetWebSingleImageCallback);
+    // Provide the user feedback 
     document.getElementById("capturedText").innerHTML = "Image Recorded to " + filepath;
 }
 
